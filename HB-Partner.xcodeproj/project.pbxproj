@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1144C2242333E5D50073CEF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2232333E5D50073CEF8 /* AppDelegate.swift */; };
-		1144C2262333E5D50073CEF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2252333E5D50073CEF8 /* ViewController.swift */; };
 		1144C2292333E5D50073CEF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1144C2272333E5D50073CEF8 /* Main.storyboard */; };
 		1144C22B2333E5D60073CEF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1144C22A2333E5D60073CEF8 /* Assets.xcassets */; };
 		1144C22E2333E5D60073CEF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1144C22C2333E5D60073CEF8 /* LaunchScreen.storyboard */; };
+		1144C2392333E97B0073CEF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2382333E97B0073CEF8 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1144C2202333E5D50073CEF8 /* HB-Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HB-Partner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1144C2232333E5D50073CEF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1144C2252333E5D50073CEF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1144C2282333E5D50073CEF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1144C22A2333E5D60073CEF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1144C22D2333E5D60073CEF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1144C22F2333E5D60073CEF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1144C2382333E97B0073CEF8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,38 @@
 		1144C2222333E5D50073CEF8 /* HB-Partner */ = {
 			isa = PBXGroup;
 			children = (
+				1144C2362333E9230073CEF8 /* Storyboard */,
+				1144C2352333E9040073CEF8 /* ViewController */,
 				1144C2232333E5D50073CEF8 /* AppDelegate.swift */,
-				1144C2252333E5D50073CEF8 /* ViewController.swift */,
-				1144C2272333E5D50073CEF8 /* Main.storyboard */,
 				1144C22A2333E5D60073CEF8 /* Assets.xcassets */,
 				1144C22C2333E5D60073CEF8 /* LaunchScreen.storyboard */,
 				1144C22F2333E5D60073CEF8 /* Info.plist */,
 			);
 			path = "HB-Partner";
+			sourceTree = "<group>";
+		};
+		1144C2352333E9040073CEF8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1144C2372333E9600073CEF8 /* Main */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1144C2362333E9230073CEF8 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1144C2272333E5D50073CEF8 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1144C2372333E9600073CEF8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1144C2382333E97B0073CEF8 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1144C2262333E5D50073CEF8 /* ViewController.swift in Sources */,
 				1144C2242333E5D50073CEF8 /* AppDelegate.swift in Sources */,
+				1144C2392333E97B0073CEF8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +313,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hungcao.hbpartner.HB-Partner";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hungcao.hbpartner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,7 +331,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hungcao.hbpartner.HB-Partner";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hungcao.hbpartner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
