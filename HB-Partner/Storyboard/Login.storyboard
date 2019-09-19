@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yOU-e7-YvQ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="XOh-tv-Sth">
+            <objects>
+                <viewController id="yOU-e7-YvQ" customClass="LoginViewController" customModule="HB_Partner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jna-6V-KFe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZJ-iD-Oo1">
+                                <rect key="frame" x="20" y="428" width="374" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uRW-AB-v13"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="LOGIN VIA PHONE">
+                                    <color key="titleColor" name="primary_red"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="primary_red"/>
+                        <constraints>
+                            <constraint firstItem="cZJ-iD-Oo1" firstAttribute="leading" secondItem="HTE-Mg-JgZ" secondAttribute="leading" constant="20" id="3g7-7j-bAb"/>
+                            <constraint firstItem="cZJ-iD-Oo1" firstAttribute="centerY" secondItem="HTE-Mg-JgZ" secondAttribute="centerY" id="EcM-RM-lmN"/>
+                            <constraint firstItem="cZJ-iD-Oo1" firstAttribute="centerX" secondItem="HTE-Mg-JgZ" secondAttribute="centerX" id="PNv-qL-xa3"/>
+                            <constraint firstItem="HTE-Mg-JgZ" firstAttribute="trailing" secondItem="cZJ-iD-Oo1" secondAttribute="trailing" constant="20" id="Tfe-S9-0VE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HTE-Mg-JgZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sO7-d7-E8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="109"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="primary_red">
+            <color red="0.90588235294117647" green="0.0" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

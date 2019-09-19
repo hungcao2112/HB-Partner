@@ -12,6 +12,12 @@
 		1144C22B2333E5D60073CEF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1144C22A2333E5D60073CEF8 /* Assets.xcassets */; };
 		1144C22E2333E5D60073CEF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1144C22C2333E5D60073CEF8 /* LaunchScreen.storyboard */; };
 		1144C2392333E97B0073CEF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2382333E97B0073CEF8 /* MainViewController.swift */; };
+		1144C23F2333EE8E0073CEF8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1144C23E2333EE8E0073CEF8 /* Colors.xcassets */; };
+		1144C2412333EF850073CEF8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1144C2402333EF850073CEF8 /* Login.storyboard */; };
+		1144C2442333EF9F0073CEF8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2432333EF9F0073CEF8 /* LoginViewController.swift */; };
+		1144C2472333F0900073CEF8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2462333F0900073CEF8 /* UIViewExtension.swift */; };
+		1144C2492333F1D70073CEF8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2482333F1D70073CEF8 /* R.generated.swift */; };
+		97694504D05D8D053199A3CE /* Pods_HB_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,14 @@
 		1144C22D2333E5D60073CEF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1144C22F2333E5D60073CEF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1144C2382333E97B0073CEF8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1144C23E2333EE8E0073CEF8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1144C2402333EF850073CEF8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		1144C2432333EF9F0073CEF8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1144C2462333F0900073CEF8 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		1144C2482333F1D70073CEF8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		9709E33EA15380B5359CDE00 /* Pods-HB-Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.debug.xcconfig"; sourceTree = "<group>"; };
+		B1887A720DF8A17A4B0F13CB /* Pods-HB-Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.release.xcconfig"; sourceTree = "<group>"; };
+		F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB_Partner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97694504D05D8D053199A3CE /* Pods_HB_Partner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +55,8 @@
 			children = (
 				1144C2222333E5D50073CEF8 /* HB-Partner */,
 				1144C2212333E5D50073CEF8 /* Products */,
+				A6C7882007982AD590EEBD0E /* Pods */,
+				B1BFDDB0A181FD35F3D1140A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +71,14 @@
 		1144C2222333E5D50073CEF8 /* HB-Partner */ = {
 			isa = PBXGroup;
 			children = (
+				1144C2452333EFE40073CEF8 /* Extension */,
 				1144C2362333E9230073CEF8 /* Storyboard */,
 				1144C2352333E9040073CEF8 /* ViewController */,
 				1144C2232333E5D50073CEF8 /* AppDelegate.swift */,
 				1144C22A2333E5D60073CEF8 /* Assets.xcassets */,
-				1144C22C2333E5D60073CEF8 /* LaunchScreen.storyboard */,
+				1144C23E2333EE8E0073CEF8 /* Colors.xcassets */,
 				1144C22F2333E5D60073CEF8 /* Info.plist */,
+				1144C2482333F1D70073CEF8 /* R.generated.swift */,
 			);
 			path = "HB-Partner";
 			sourceTree = "<group>";
@@ -67,6 +86,7 @@
 		1144C2352333E9040073CEF8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1144C2422333EF900073CEF8 /* Login */,
 				1144C2372333E9600073CEF8 /* Main */,
 			);
 			path = ViewController;
@@ -76,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				1144C2272333E5D50073CEF8 /* Main.storyboard */,
+				1144C22C2333E5D60073CEF8 /* LaunchScreen.storyboard */,
+				1144C2402333EF850073CEF8 /* Login.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -88,6 +110,39 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		1144C2422333EF900073CEF8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1144C2432333EF9F0073CEF8 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1144C2452333EFE40073CEF8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1144C2462333F0900073CEF8 /* UIViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A6C7882007982AD590EEBD0E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9709E33EA15380B5359CDE00 /* Pods-HB-Partner.debug.xcconfig */,
+				B1887A720DF8A17A4B0F13CB /* Pods-HB-Partner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B1BFDDB0A181FD35F3D1140A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1144C2322333E5D60073CEF8 /* Build configuration list for PBXNativeTarget "HB-Partner" */;
 			buildPhases = (
+				FD2BE7FB61A8064E9A223BE8 /* [CP] Check Pods Manifest.lock */,
+				1144C23B2333ED350073CEF8 /* ShellScript */,
 				1144C21C2333E5D50073CEF8 /* Sources */,
 				1144C21D2333E5D50073CEF8 /* Frameworks */,
 				1144C21E2333E5D50073CEF8 /* Resources */,
+				9A4EDA823C1873DADFE2E9E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,18 +205,89 @@
 			buildActionMask = 2147483647;
 			files = (
 				1144C22E2333E5D60073CEF8 /* LaunchScreen.storyboard in Resources */,
+				1144C23F2333EE8E0073CEF8 /* Colors.xcassets in Resources */,
 				1144C22B2333E5D60073CEF8 /* Assets.xcassets in Resources */,
+				1144C2412333EF850073CEF8 /* Login.storyboard in Resources */,
 				1144C2292333E5D50073CEF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1144C23B2333ED350073CEF8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$SRCROOT/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		9A4EDA823C1873DADFE2E9E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD2BE7FB61A8064E9A223BE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HB-Partner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1144C21C2333E5D50073CEF8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1144C2472333F0900073CEF8 /* UIViewExtension.swift in Sources */,
+				1144C2442333EF9F0073CEF8 /* LoginViewController.swift in Sources */,
+				1144C2492333F1D70073CEF8 /* R.generated.swift in Sources */,
 				1144C2242333E5D50073CEF8 /* AppDelegate.swift in Sources */,
 				1144C2392333E97B0073CEF8 /* MainViewController.swift in Sources */,
 			);
@@ -304,6 +433,7 @@
 		};
 		1144C2332333E5D60073CEF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9709E33EA15380B5359CDE00 /* Pods-HB-Partner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -322,6 +452,7 @@
 		};
 		1144C2342333E5D60073CEF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1887A720DF8A17A4B0F13CB /* Pods-HB-Partner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
