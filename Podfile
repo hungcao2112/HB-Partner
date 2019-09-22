@@ -7,6 +7,7 @@ target 'HB-Partner' do
 
   # Pods for HB-Partner
   pod 'R.swift'
+  pod 'AccountKit'
 	
 
 end

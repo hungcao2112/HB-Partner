@@ -117,11 +117,17 @@ struct _R: Rswift.Validatable {
       typealias InitialController = MainViewController
       
       let bundle = R.hostingBundle
+      let mainViewController = StoryboardViewControllerResource<MainViewController>(identifier: "MainViewController")
       let name = "Main"
+      
+      func mainViewController(_: Void = ()) -> MainViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainViewController)
+      }
       
       static func validate() throws {
         if #available(iOS 11.0, *) {
         }
+        if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
       }
       
       fileprivate init() {}

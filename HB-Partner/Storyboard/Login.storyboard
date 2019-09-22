@@ -34,6 +34,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onLoginButtonClicked:" destination="yOU-e7-YvQ" eventType="touchUpInside" id="5Cs-29-iuU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="primary_red"/>
