@@ -130,7 +130,23 @@
                     <view key="view" contentMode="scaleToFill" id="ZYP-Ja-W83">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXa-KF-rf1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lkA-5H-NHd" firstAttribute="trailing" secondItem="oXa-KF-rf1" secondAttribute="trailing" id="6lw-cx-Wcg"/>
+                            <constraint firstItem="oXa-KF-rf1" firstAttribute="top" secondItem="lkA-5H-NHd" secondAttribute="top" id="BOO-dd-1ko"/>
+                            <constraint firstItem="lkA-5H-NHd" firstAttribute="bottom" secondItem="oXa-KF-rf1" secondAttribute="bottom" id="EIT-c3-T6w"/>
+                            <constraint firstItem="oXa-KF-rf1" firstAttribute="leading" secondItem="lkA-5H-NHd" secondAttribute="leading" id="IOd-ee-J64"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lkA-5H-NHd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="New" image="ic_tabbar_new" id="jnV-kC-L2Q"/>
