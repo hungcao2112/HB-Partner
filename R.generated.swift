@@ -31,6 +31,40 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
+  /// This `R.image` struct is generated, and contains static references to 4 images.
+  struct image {
+    /// Image `ic_tabbar_closed`.
+    static let ic_tabbar_closed = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tabbar_closed")
+    /// Image `ic_tabbar_new`.
+    static let ic_tabbar_new = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tabbar_new")
+    /// Image `ic_tabbar_processing`.
+    static let ic_tabbar_processing = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tabbar_processing")
+    /// Image `ic_tabbar_settings`.
+    static let ic_tabbar_settings = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tabbar_settings")
+    
+    /// `UIImage(named: "ic_tabbar_closed", bundle: ..., traitCollection: ...)`
+    static func ic_tabbar_closed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tabbar_closed, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_tabbar_new", bundle: ..., traitCollection: ...)`
+    static func ic_tabbar_new(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tabbar_new, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_tabbar_processing", bundle: ..., traitCollection: ...)`
+    static func ic_tabbar_processing(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tabbar_processing, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_tabbar_settings", bundle: ..., traitCollection: ...)`
+    static func ic_tabbar_settings(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_tabbar_settings, compatibleWith: traitCollection)
+    }
+    
+    fileprivate init() {}
+  }
+  
   /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
@@ -125,7 +159,12 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "ic_tabbar_closed", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tabbar_closed' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_tabbar_new", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tabbar_new' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_tabbar_processing", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tabbar_processing' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_tabbar_settings", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tabbar_settings' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
+          if UIKit.UIColor(named: "primary_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary_red' is used in storyboard 'Main', but couldn't be loaded.") }
         }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
       }
