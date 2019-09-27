@@ -17,6 +17,7 @@
 		1144C2442333EF9F0073CEF8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2432333EF9F0073CEF8 /* LoginViewController.swift */; };
 		1144C2472333F0900073CEF8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2462333F0900073CEF8 /* UIViewExtension.swift */; };
 		1144C2492333F1D70073CEF8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2482333F1D70073CEF8 /* R.generated.swift */; };
+		11515F01233E8D8F00AC839C /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11515F00233E8D8F00AC839C /* NewViewController.swift */; };
 		115E25952337B2F900E2954F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115E25942337B2F900E2954F /* WebViewController.swift */; };
 		97694504D05D8D053199A3CE /* Pods_HB_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		1144C2432333EF9F0073CEF8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1144C2462333F0900073CEF8 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		1144C2482333F1D70073CEF8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		11515F00233E8D8F00AC839C /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		115E25942337B2F900E2954F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		9709E33EA15380B5359CDE00 /* Pods-HB-Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		B1887A720DF8A17A4B0F13CB /* Pods-HB-Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				115E25932337B2D600E2954F /* Share */,
 				1144C2422333EF900073CEF8 /* Login */,
 				1144C2372333E9600073CEF8 /* Main */,
+				11515EFF233E8D5900AC839C /* New */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -127,6 +130,14 @@
 				1144C2462333F0900073CEF8 /* UIViewExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		11515EFF233E8D5900AC839C /* New */ = {
+			isa = PBXGroup;
+			children = (
+				11515F00233E8D8F00AC839C /* NewViewController.swift */,
+			);
+			path = New;
 			sourceTree = "<group>";
 		};
 		115E25932337B2D600E2954F /* Share */ = {
@@ -321,6 +332,7 @@
 			files = (
 				1144C2472333F0900073CEF8 /* UIViewExtension.swift in Sources */,
 				115E25952337B2F900E2954F /* WebViewController.swift in Sources */,
+				11515F01233E8D8F00AC839C /* NewViewController.swift in Sources */,
 				1144C2442333EF9F0073CEF8 /* LoginViewController.swift in Sources */,
 				1144C2492333F1D70073CEF8 /* R.generated.swift in Sources */,
 				1144C2242333E5D50073CEF8 /* AppDelegate.swift in Sources */,

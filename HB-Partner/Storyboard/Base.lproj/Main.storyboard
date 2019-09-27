@@ -126,7 +126,7 @@
         <!--New-->
         <scene sceneID="NrN-Bq-g1P">
             <objects>
-                <viewController id="oCU-bb-i0y" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewViewController" id="oCU-bb-i0y" customClass="NewViewController" customModule="HB_Partner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZYP-Ja-W83">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,6 +151,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="New" image="ic_tabbar_new" id="jnV-kC-L2Q"/>
                     <navigationItem key="navigationItem" title="New" id="fYa-H3-aaS"/>
+                    <connections>
+                        <outlet property="webView" destination="oXa-KF-rf1" id="dKN-t3-mTj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJs-Ke-fQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

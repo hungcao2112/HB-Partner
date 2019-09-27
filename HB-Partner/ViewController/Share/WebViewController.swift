@@ -15,13 +15,19 @@ class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupWebView()
     }
     
 
     private func setupWebView() {
-        webView.
+        let cookie = HTTPCookie(properties: [.domain: "admin2.hobien.kjclub.org",
+                                             .path: "/m_view_all_bug_page.php",
+                                             .name: "MANTIS_STRING_COOKIE",
+                                             .value: "beGvszJRVI769dF4TtSHDe2UJawKHA4AOYu2kZZk-uF8Jq1mtrtPySINButI-4pH"])
+        webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie!, completionHandler: nil)
+
+        var urlRequest = URLRequest(url: URL(string: "http://admin2.hobien.kjclub.org/m_view_all_bug_page.php")!)
+        webView.load(urlRequest)
     }
 
 }
