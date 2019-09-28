@@ -13,6 +13,11 @@ class WebViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
 
+    var requestURL: String = ""
+    var cookieDomain: String = ""
+    var cookiePath: String = ""
+    var cookieValue: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWebView()
@@ -20,13 +25,14 @@ class WebViewController: UIViewController {
     
 
     private func setupWebView() {
-        let cookie = HTTPCookie(properties: [.domain: "admin2.hobien.kjclub.org",
-                                             .path: "/m_view_all_bug_page.php",
+        let cookie = HTTPCookie(properties: [.domain: cookieDomain,
+                                             .path: cookiePath,
                                              .name: "MANTIS_STRING_COOKIE",
-                                             .value: "beGvszJRVI769dF4TtSHDe2UJawKHA4AOYu2kZZk-uF8Jq1mtrtPySINButI-4pH"])
-        webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookie!, completionHandler: nil)
-
-        var urlRequest = URLRequest(url: URL(string: "http://admin2.hobien.kjclub.org/m_view_all_bug_page.php")!)
+                                             .value: cookieValue])
+        
+        guard let cookies = cookie else { return }
+        webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookies, completionHandler: nil)
+        let urlRequest = URLRequest(url: URL(string: requestURL)!)
         webView.load(urlRequest)
     }
 

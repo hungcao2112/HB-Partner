@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yOU-e7-YvQ">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yOU-e7-YvQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,16 +36,26 @@
                                     <action selector="onLoginButtonClicked:" destination="yOU-e7-YvQ" eventType="touchUpInside" id="5Cs-29-iuU"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="14Y-2h-A2l">
+                                <rect key="frame" x="188.5" y="518" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" name="primary_red"/>
                         <constraints>
                             <constraint firstItem="cZJ-iD-Oo1" firstAttribute="leading" secondItem="HTE-Mg-JgZ" secondAttribute="leading" constant="20" id="3g7-7j-bAb"/>
                             <constraint firstItem="cZJ-iD-Oo1" firstAttribute="centerY" secondItem="HTE-Mg-JgZ" secondAttribute="centerY" id="EcM-RM-lmN"/>
+                            <constraint firstItem="14Y-2h-A2l" firstAttribute="top" secondItem="cZJ-iD-Oo1" secondAttribute="bottom" constant="40" id="Jjz-ec-NRT"/>
                             <constraint firstItem="cZJ-iD-Oo1" firstAttribute="centerX" secondItem="HTE-Mg-JgZ" secondAttribute="centerX" id="PNv-qL-xa3"/>
+                            <constraint firstItem="14Y-2h-A2l" firstAttribute="centerX" secondItem="HTE-Mg-JgZ" secondAttribute="centerX" id="Rh8-WL-cKp"/>
                             <constraint firstItem="HTE-Mg-JgZ" firstAttribute="trailing" secondItem="cZJ-iD-Oo1" secondAttribute="trailing" constant="20" id="Tfe-S9-0VE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HTE-Mg-JgZ"/>
                     </view>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="14Y-2h-A2l" id="t7z-zW-QKG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sO7-d7-E8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

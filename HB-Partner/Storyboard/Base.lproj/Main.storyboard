@@ -12,15 +12,34 @@
         <!--Processing-->
         <scene sceneID="ix4-hp-L7s">
             <objects>
-                <viewController id="4WZ-in-ZrY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProcessingViewController" id="4WZ-in-ZrY" customClass="ProcessingViewController" customModule="HB_Partner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aTy-nD-w6C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ay-aE-HXb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UHR-sQ-eJ0" firstAttribute="bottom" secondItem="1Ay-aE-HXb" secondAttribute="bottom" id="2Kt-4Z-L5K"/>
+                            <constraint firstItem="UHR-sQ-eJ0" firstAttribute="trailing" secondItem="1Ay-aE-HXb" secondAttribute="trailing" id="TWV-jv-Wtu"/>
+                            <constraint firstItem="1Ay-aE-HXb" firstAttribute="leading" secondItem="UHR-sQ-eJ0" secondAttribute="leading" id="mo5-L2-EXc"/>
+                            <constraint firstItem="1Ay-aE-HXb" firstAttribute="top" secondItem="UHR-sQ-eJ0" secondAttribute="top" id="ydo-kn-lxc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UHR-sQ-eJ0"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Processing" image="ic_tabbar_processing" id="2xq-C5-fXi"/>
                     <navigationItem key="navigationItem" title="Processing" id="DNM-gU-r4y"/>
+                    <connections>
+                        <outlet property="webView" destination="1Ay-aE-HXb" id="H5B-YX-HIi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBQ-Gt-b2E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

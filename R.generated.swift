@@ -154,6 +154,7 @@ struct _R: Rswift.Validatable {
       let mainViewController = StoryboardViewControllerResource<MainViewController>(identifier: "MainViewController")
       let name = "Main"
       let newViewController = StoryboardViewControllerResource<NewViewController>(identifier: "NewViewController")
+      let processingViewController = StoryboardViewControllerResource<ProcessingViewController>(identifier: "ProcessingViewController")
       
       func mainViewController(_: Void = ()) -> MainViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainViewController)
@@ -161,6 +162,10 @@ struct _R: Rswift.Validatable {
       
       func newViewController(_: Void = ()) -> NewViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: newViewController)
+      }
+      
+      func processingViewController(_: Void = ()) -> ProcessingViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: processingViewController)
       }
       
       static func validate() throws {
@@ -173,6 +178,7 @@ struct _R: Rswift.Validatable {
         }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
         if _R.storyboard.main().newViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newViewController' could not be loaded from storyboard 'Main' as 'NewViewController'.") }
+        if _R.storyboard.main().processingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'processingViewController' could not be loaded from storyboard 'Main' as 'ProcessingViewController'.") }
       }
       
       fileprivate init() {}

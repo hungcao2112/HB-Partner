@@ -19,6 +19,11 @@
 		1144C2492333F1D70073CEF8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144C2482333F1D70073CEF8 /* R.generated.swift */; };
 		11515F01233E8D8F00AC839C /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11515F00233E8D8F00AC839C /* NewViewController.swift */; };
 		115E25952337B2F900E2954F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115E25942337B2F900E2954F /* WebViewController.swift */; };
+		1176330D233FDF8D000EA82D /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176330C233FDF8D000EA82D /* Requests.swift */; };
+		11763311233FE03E000EA82D /* PhoneValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11763310233FE03E000EA82D /* PhoneValidationResponse.swift */; };
+		11763314233FE1F1000EA82D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11763313233FE1F1000EA82D /* Config.swift */; };
+		11763316233FE6A5000EA82D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11763315233FE6A5000EA82D /* UIViewControllerExtension.swift */; };
+		11763319233FFA9E000EA82D /* ProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11763318233FFA9E000EA82D /* ProcessingViewController.swift */; };
 		97694504D05D8D053199A3CE /* Pods_HB_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +42,11 @@
 		1144C2482333F1D70073CEF8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		11515F00233E8D8F00AC839C /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		115E25942337B2F900E2954F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		1176330C233FDF8D000EA82D /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		11763310233FE03E000EA82D /* PhoneValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneValidationResponse.swift; sourceTree = "<group>"; };
+		11763313233FE1F1000EA82D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		11763315233FE6A5000EA82D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		11763318233FFA9E000EA82D /* ProcessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingViewController.swift; sourceTree = "<group>"; };
 		9709E33EA15380B5359CDE00 /* Pods-HB-Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		B1887A720DF8A17A4B0F13CB /* Pods-HB-Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.release.xcconfig"; sourceTree = "<group>"; };
 		F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB_Partner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +85,9 @@
 		1144C2222333E5D50073CEF8 /* HB-Partner */ = {
 			isa = PBXGroup;
 			children = (
+				11763312233FE1DF000EA82D /* Config */,
+				1176330F233FE00B000EA82D /* Entity */,
+				1176330B233FDF6D000EA82D /* Service */,
 				1144C2452333EFE40073CEF8 /* Extension */,
 				1144C2362333E9230073CEF8 /* Storyboard */,
 				1144C2352333E9040073CEF8 /* ViewController */,
@@ -94,6 +107,7 @@
 				1144C2422333EF900073CEF8 /* Login */,
 				1144C2372333E9600073CEF8 /* Main */,
 				11515EFF233E8D5900AC839C /* New */,
+				11763317233FFA65000EA82D /* Procesing */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -128,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				1144C2462333F0900073CEF8 /* UIViewExtension.swift */,
+				11763315233FE6A5000EA82D /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -146,6 +161,38 @@
 				115E25942337B2F900E2954F /* WebViewController.swift */,
 			);
 			path = Share;
+			sourceTree = "<group>";
+		};
+		1176330B233FDF6D000EA82D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1176330C233FDF8D000EA82D /* Requests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1176330F233FE00B000EA82D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				11763310233FE03E000EA82D /* PhoneValidationResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		11763312233FE1DF000EA82D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				11763313233FE1F1000EA82D /* Config.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		11763317233FFA65000EA82D /* Procesing */ = {
+			isa = PBXGroup;
+			children = (
+				11763318233FFA9E000EA82D /* ProcessingViewController.swift */,
+			);
+			path = Procesing;
 			sourceTree = "<group>";
 		};
 		A6C7882007982AD590EEBD0E /* Pods */ = {
@@ -288,13 +335,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -335,7 +390,12 @@
 				11515F01233E8D8F00AC839C /* NewViewController.swift in Sources */,
 				1144C2442333EF9F0073CEF8 /* LoginViewController.swift in Sources */,
 				1144C2492333F1D70073CEF8 /* R.generated.swift in Sources */,
+				1176330D233FDF8D000EA82D /* Requests.swift in Sources */,
+				11763311233FE03E000EA82D /* PhoneValidationResponse.swift in Sources */,
+				11763314233FE1F1000EA82D /* Config.swift in Sources */,
 				1144C2242333E5D50073CEF8 /* AppDelegate.swift in Sources */,
+				11763319233FFA9E000EA82D /* ProcessingViewController.swift in Sources */,
+				11763316233FE6A5000EA82D /* UIViewControllerExtension.swift in Sources */,
 				1144C2392333E97B0073CEF8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

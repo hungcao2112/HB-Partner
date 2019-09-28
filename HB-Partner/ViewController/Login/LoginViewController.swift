@@ -11,7 +11,10 @@ import AccountKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     var accountKit: AccountKit!
+    private var validationResponse: PhoneValidationResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,7 @@ class LoginViewController: UIViewController {
         guard let _ = accountKit.currentAccessToken else {
             return
         }
-        self.goToMain()
+        self.requestAccount()
     }
     
     private func setupAccountKit() {
@@ -47,7 +50,29 @@ class LoginViewController: UIViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        appDelegate.switchRootViewController(R.storyboard.main.mainViewController()!)
+        let mainViewController = R.storyboard.main.mainViewController()!
+        mainViewController.token = validationResponse?.token ?? ""
+        appDelegate.switchRootViewController(mainViewController)
+    }
+    
+    private func requestAccount() {
+        self.loadingIndicator.startAnimating()
+        accountKit.requestAccount { [weak self] (account, error) in
+            guard let phone = account?.phoneNumber?.phoneNumber else { return }
+            self?.validatePhone(phone: "0\(phone)")
+        }
+    }
+    
+    private func validatePhone(phone: String) {
+        Request.validatePhone(phone: phone, onSuccess: { [weak self] (response, message) in
+            self?.validationResponse = response
+            self?.goToMain()
+            self?.showToast(message)
+            self?.loadingIndicator.stopAnimating()
+        }) { [weak self] (message) in
+            self?.showToast(message)
+            self?.loadingIndicator.stopAnimating()
+        }
     }
     
     @IBAction func onLoginButtonClicked(_ sender: Any) {
@@ -57,7 +82,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: AKFViewControllerDelegate {
     func viewController(_ viewController: UIViewController & AKFViewController, didCompleteLoginWith accessToken: AccessToken, state: String) {
-        goToMain()
+        requestAccount()
     }
 }
 
