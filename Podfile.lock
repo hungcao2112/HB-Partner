@@ -1,20 +1,46 @@
 PODS:
+  - AccountKit (5.0.1)
+  - Alamofire (4.8.2)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
+  - ObjectMapper (3.5.0)
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
+  - Toaster (2.2.0)
 
 DEPENDENCIES:
+  - AccountKit
+  - AlamofireObjectMapper
+  - NVActivityIndicatorView
   - R.swift
+  - Toaster
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AccountKit
+    - Alamofire
+    - AlamofireObjectMapper
+    - NVActivityIndicatorView
+    - ObjectMapper
     - R.swift
     - R.swift.Library
+    - Toaster
 
 SPEC CHECKSUMS:
+  AccountKit: d05258857e74b04386c263a1365b27dbb5ff62b9
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
+  ObjectMapper: 078b564ed25c6578b62588e306bf1da3924636d4
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
 
-PODFILE CHECKSUM: 09bc5b379806b8d7c0181ecaeaba4c40b7fc5e96
+PODFILE CHECKSUM: 94dca4463236c2cd9600a4d4cb68a887f88362d5
 
 COCOAPODS: 1.5.3
