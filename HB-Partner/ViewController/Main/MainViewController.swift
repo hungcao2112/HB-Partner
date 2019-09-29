@@ -22,15 +22,12 @@ class MainViewController: UITabBarController {
         for viewController in viewControllers ?? [] {
             if let nvc = viewController as? UINavigationController, let vc = nvc.topViewController as? NewViewController {
                 vc.requestURL = Config.MENU_NEW_WEBVIEW_URL
-                vc.cookieDomain = Config.MENU_NEW_WEBVIEW_DOMAIN
-                vc.cookiePath = Config.MENU_NEW_WEBVIEW_PATH
-                vc.cookieValue = token
             }
             else if let nvc = viewController as? UINavigationController, let vc = nvc.topViewController as? ProcessingViewController {
                 vc.requestURL = Config.MENU_PROCESSING_WEBVIEW_URL
-                vc.cookieDomain = Config.MENU_PROCESSING_WEBVIEW_DOMAIN
-                vc.cookiePath = Config.MENU_PROCESSING_WEBVIEW_PATH
-                vc.cookieValue = token
+            }
+            else if let nvc = viewController as? UINavigationController, let vc = nvc.topViewController as? ClosedViewController {
+                vc.requestURL = Config.MENU_CLOSED_WEBVIEW_URL
             }
         }
     }

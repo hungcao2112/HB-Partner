@@ -151,10 +151,15 @@ struct _R: Rswift.Validatable {
       typealias InitialController = MainViewController
       
       let bundle = R.hostingBundle
+      let closedViewController = StoryboardViewControllerResource<ClosedViewController>(identifier: "ClosedViewController")
       let mainViewController = StoryboardViewControllerResource<MainViewController>(identifier: "MainViewController")
       let name = "Main"
       let newViewController = StoryboardViewControllerResource<NewViewController>(identifier: "NewViewController")
       let processingViewController = StoryboardViewControllerResource<ProcessingViewController>(identifier: "ProcessingViewController")
+      
+      func closedViewController(_: Void = ()) -> ClosedViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: closedViewController)
+      }
       
       func mainViewController(_: Void = ()) -> MainViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mainViewController)
@@ -176,6 +181,7 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, *) {
           if UIKit.UIColor(named: "primary_red", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary_red' is used in storyboard 'Main', but couldn't be loaded.") }
         }
+        if _R.storyboard.main().closedViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'closedViewController' could not be loaded from storyboard 'Main' as 'ClosedViewController'.") }
         if _R.storyboard.main().mainViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mainViewController' could not be loaded from storyboard 'Main' as 'MainViewController'.") }
         if _R.storyboard.main().newViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newViewController' could not be loaded from storyboard 'Main' as 'NewViewController'.") }
         if _R.storyboard.main().processingViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'processingViewController' could not be loaded from storyboard 'Main' as 'ProcessingViewController'.") }

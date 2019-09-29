@@ -69,15 +69,34 @@
         <!--Closed-->
         <scene sceneID="RWi-tK-83e">
             <objects>
-                <viewController id="I24-oo-qwS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClosedViewController" id="I24-oo-qwS" customClass="ClosedViewController" customModule="HB_Partner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ybK-R9-LgH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCQ-4h-4Fv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9zd-HH-bX9" firstAttribute="trailing" secondItem="UCQ-4h-4Fv" secondAttribute="trailing" id="SOg-P8-pch"/>
+                            <constraint firstItem="UCQ-4h-4Fv" firstAttribute="top" secondItem="9zd-HH-bX9" secondAttribute="top" id="bQb-aU-HpY"/>
+                            <constraint firstItem="9zd-HH-bX9" firstAttribute="bottom" secondItem="UCQ-4h-4Fv" secondAttribute="bottom" id="e4h-YS-nzg"/>
+                            <constraint firstItem="UCQ-4h-4Fv" firstAttribute="leading" secondItem="9zd-HH-bX9" secondAttribute="leading" id="kPT-9Y-873"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9zd-HH-bX9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Closed" image="ic_tabbar_closed" id="eUK-lX-PVe"/>
                     <navigationItem key="navigationItem" title="Closed" id="S7g-Mq-d5N"/>
+                    <connections>
+                        <outlet property="webView" destination="UCQ-4h-4Fv" id="QJB-Lf-C6q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3e-IL-aEm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +130,56 @@
                     <view key="view" contentMode="scaleToFill" id="fF0-K7-FfM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tk-03-kHx">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhB-2V-4Vz">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TCo-Xv-kab">
+                                                <rect key="frame" x="10" y="10" width="394" height="50"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obn-24-m9O">
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Erd-Ef-Mny"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="TCo-Xv-kab" secondAttribute="bottom" constant="10" id="KR8-QU-S6a"/>
+                                            <constraint firstAttribute="trailing" secondItem="TCo-Xv-kab" secondAttribute="trailing" constant="10" id="NBg-38-fYZ"/>
+                                            <constraint firstItem="TCo-Xv-kab" firstAttribute="leading" secondItem="nhB-2V-4Vz" secondAttribute="leading" constant="10" id="Oma-9Q-fWM"/>
+                                            <constraint firstItem="TCo-Xv-kab" firstAttribute="top" secondItem="nhB-2V-4Vz" secondAttribute="top" constant="10" id="h5P-V3-m1u"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nhB-2V-4Vz" firstAttribute="width" secondItem="6tk-03-kHx" secondAttribute="width" id="91t-OL-e9D"/>
+                                    <constraint firstItem="nhB-2V-4Vz" firstAttribute="top" secondItem="6tk-03-kHx" secondAttribute="top" id="lCn-co-HPN"/>
+                                    <constraint firstAttribute="trailing" secondItem="nhB-2V-4Vz" secondAttribute="trailing" id="oiZ-H4-sZ0"/>
+                                    <constraint firstAttribute="bottom" secondItem="nhB-2V-4Vz" secondAttribute="bottom" id="p8L-VI-UXe"/>
+                                    <constraint firstItem="nhB-2V-4Vz" firstAttribute="leading" secondItem="6tk-03-kHx" secondAttribute="leading" id="vVO-b7-UuR"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6tk-03-kHx" firstAttribute="leading" secondItem="qEY-uB-bQd" secondAttribute="leading" id="Tj8-r4-C4i"/>
+                            <constraint firstItem="6tk-03-kHx" firstAttribute="top" secondItem="qEY-uB-bQd" secondAttribute="top" id="Uuq-11-bqf"/>
+                            <constraint firstItem="qEY-uB-bQd" firstAttribute="trailing" secondItem="6tk-03-kHx" secondAttribute="trailing" id="h0c-Gj-RaW"/>
+                            <constraint firstItem="qEY-uB-bQd" firstAttribute="bottom" secondItem="6tk-03-kHx" secondAttribute="bottom" id="jZY-Tr-1iI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qEY-uB-bQd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="ic_tabbar_settings" id="sey-ky-eMM"/>
@@ -119,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HpI-Wc-Mzw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="765"/>
+            <point key="canvasLocation" x="1405.7971014492755" y="764.73214285714278"/>
         </scene>
         <!--Item-->
         <scene sceneID="gXy-a3-lPy">
@@ -197,6 +265,13 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddO-RF-gaB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="OLa-Jt-tql">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="safeArea" id="bNV-MA-KJJ"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="hxG-d2-LsT"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="WSr-98-R24"/>
+                </scrollView>
             </objects>
             <point key="canvasLocation" x="-755" y="-285"/>
         </scene>

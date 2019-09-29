@@ -14,9 +14,6 @@ class WebViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
 
     var requestURL: String = ""
-    var cookieDomain: String = ""
-    var cookiePath: String = ""
-    var cookieValue: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +22,12 @@ class WebViewController: UIViewController {
     
 
     private func setupWebView() {
-        let cookie = HTTPCookie(properties: [.domain: cookieDomain,
-                                             .path: cookiePath,
-                                             .name: "MANTIS_STRING_COOKIE",
-                                             .value: cookieValue])
+        webView.backgroundColor = .white
         
-        guard let cookies = cookie else { return }
+        guard let cookies = HTTPCookieStorage.shared.cookies?.last  else { return }
         webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookies, completionHandler: nil)
-        let urlRequest = URLRequest(url: URL(string: requestURL)!)
+        var urlRequest = URLRequest(url: URL(string: requestURL)!)
+        urlRequest.httpMethod = "GET"
         webView.load(urlRequest)
     }
 

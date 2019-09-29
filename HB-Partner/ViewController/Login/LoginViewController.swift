@@ -66,6 +66,7 @@ class LoginViewController: UIViewController {
     private func validatePhone(phone: String) {
         Request.validatePhone(phone: phone, onSuccess: { [weak self] (response, message) in
             self?.validationResponse = response
+            self?.storeCookies(token: response.token ?? "")
             self?.goToMain()
             self?.showToast(message)
             self?.loadingIndicator.stopAnimating()
@@ -73,6 +74,15 @@ class LoginViewController: UIViewController {
             self?.showToast(message)
             self?.loadingIndicator.stopAnimating()
         }
+    }
+    
+    private func storeCookies(token: String) {
+        let cookie = HTTPCookie(properties: [.domain: Config.COOKIE_DOMAIN,
+                                             .path: "/",
+                                             .name: "MANTIS_STRING_COOKIE",
+                                             .value: token])
+        guard let cookies = cookie else { return }
+        HTTPCookieStorage.shared.setCookie(cookies)
     }
     
     @IBAction func onLoginButtonClicked(_ sender: Any) {
