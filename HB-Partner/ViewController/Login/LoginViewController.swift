@@ -83,6 +83,7 @@ class LoginViewController: UIViewController {
                                              .value: token])
         guard let cookies = cookie else { return }
         HTTPCookieStorage.shared.setCookie(cookies)
+        HTTPCookieStorage.shared.cookieAcceptPolicy = .always
     }
     
     @IBAction func onLoginButtonClicked(_ sender: Any) {

@@ -10,5 +10,6 @@ target 'HB-Partner' do
   pod 'AccountKit'
   pod 'AlamofireObjectMapper'
   pod 'Toaster'
+  pod 'NVActivityIndicatorView'
   
 end

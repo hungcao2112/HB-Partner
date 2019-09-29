@@ -11,6 +11,8 @@ import Foundation
 class Config {
     
     public static let PHONE_VALIDATION_URL = "http://hobien.kjclub.org/webhook/partner/CheckValidPhone.php"
+    public static let GET_PROFILE_URL = "http://hobien.kjclub.org/webhook/partner/v1/profile"
+    
     public static let COOKIE_DOMAIN = "admin2.hobien.kjclub.org"
     
     // Menu new

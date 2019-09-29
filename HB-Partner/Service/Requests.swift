@@ -29,8 +29,23 @@ class Request {
                 onError?(error.localizedDescription)
                 break
             }
-            
         }
     }
     
+     public static func getProfile(phone: String, onSuccess: ((_ response: Profile, _ message: String) -> ())?, onError: ((_ errorMessage: String) -> ())? = nil) {
+           let params = ["partner_phone": phone]
+           Alamofire.request(Config.GET_PROFILE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<ProfileResponse>) in
+               switch response.result {
+               case .success(let data):
+                guard let profile = data.data?.first else {
+                    onError?(data.message ?? "")
+                    return
+                }
+                onSuccess?(profile, data.message ?? "")
+               case .failure(let error):
+                   onError?(error.localizedDescription)
+                   break
+               }
+           }
+       }
 }
