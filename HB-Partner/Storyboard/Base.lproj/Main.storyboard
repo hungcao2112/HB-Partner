@@ -35,7 +35,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UHR-sQ-eJ0"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Processing" image="ic_tabbar_processing" id="2xq-C5-fXi"/>
+                    <tabBarItem key="tabBarItem" title="Processing" image="ic_tabbar_processing" id="2xq-C5-fXi">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Processing" id="DNM-gU-r4y">
                         <barButtonItem key="leftBarButtonItem" image="ic_back" id="BeF-xx-WEN">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,7 +58,9 @@
         <scene sceneID="5pH-6y-NlZ">
             <objects>
                 <navigationController id="J5X-Bs-8MZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="IcW-x5-l2t"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="IcW-x5-l2t">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="scf-IM-K92">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -99,7 +103,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9zd-HH-bX9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Closed" image="ic_tabbar_closed" id="eUK-lX-PVe"/>
+                    <tabBarItem key="tabBarItem" title="Closed" image="ic_tabbar_closed" id="eUK-lX-PVe">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Closed" id="S7g-Mq-d5N">
                         <barButtonItem key="leftBarButtonItem" image="ic_back" id="MLu-7b-SUH">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,7 +126,9 @@
         <scene sceneID="yJv-Ci-z8O">
             <objects>
                 <navigationController id="Akp-4i-Jmd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="als-fP-sqR"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="als-fP-sqR">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="kSr-Pn-Q5k">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -186,7 +194,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4K-BV-RdJ">
                                                         <rect key="frame" x="0.0" y="60" width="394" height="50"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nbA-ov-p5F">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_flag" translatesAutoresizingMaskIntoConstraints="NO" id="nbA-ov-p5F">
                                                                 <rect key="frame" x="10" y="10" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="WN5-Uo-pWX"/>
@@ -321,6 +329,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Rgs-iN-JJC"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <state key="normal" title="LOG OUT">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -329,6 +338,9 @@
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onLogoutButtonTapped:" destination="t5p-jc-pIP" eventType="touchUpInside" id="iFB-yc-vOt"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <userDefinedRuntimeAttributes>
@@ -365,7 +377,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qEY-uB-bQd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="ic_tabbar_settings" id="sey-ky-eMM"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="ic_tabbar_settings" id="sey-ky-eMM">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Settings" id="8TC-OD-sY3"/>
                     <connections>
                         <outlet property="addressLabel" destination="2We-Na-SYf" id="Z5r-hx-Tgi"/>
@@ -382,7 +396,9 @@
         <scene sceneID="gXy-a3-lPy">
             <objects>
                 <navigationController id="Tyo-y9-7BK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="GtJ-ch-yrD"/>
+                    <tabBarItem key="tabBarItem" title="" id="GtJ-ch-yrD">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Eep-Vh-fUe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -425,7 +441,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lkA-5H-NHd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="New" image="ic_tabbar_new" id="jnV-kC-L2Q"/>
+                    <tabBarItem key="tabBarItem" title="New" image="ic_tabbar_new" id="jnV-kC-L2Q">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="New" id="fYa-H3-aaS">
                         <barButtonItem key="leftBarButtonItem" image="ic_back" id="Iy9-mK-T0n">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -475,7 +493,9 @@
         <scene sceneID="qvp-NK-NI1">
             <objects>
                 <navigationController id="cZm-NI-yC0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="QEb-A1-QrU"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="QEb-A1-QrU">
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="TcO-qc-LWh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -495,6 +515,7 @@
     </scenes>
     <resources>
         <image name="ic_back" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="ic_flag" width="21.333333969116211" height="21.333333969116211"/>
         <image name="ic_tabbar_closed" width="21.333333969116211" height="21.333333969116211"/>
         <image name="ic_tabbar_new" width="21.333333969116211" height="21.333333969116211"/>
         <image name="ic_tabbar_processing" width="21.333333969116211" height="21.333333969116211"/>

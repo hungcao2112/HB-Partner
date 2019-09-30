@@ -27,6 +27,9 @@
 		11763314233FE1F1000EA82D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11763313233FE1F1000EA82D /* Config.swift */; };
 		11763316233FE6A5000EA82D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11763315233FE6A5000EA82D /* UIViewControllerExtension.swift */; };
 		11763319233FFA9E000EA82D /* ProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11763318233FFA9E000EA82D /* ProcessingViewController.swift */; };
+		11E56A2F234270D600BFDCBA /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E56A2E234270D600BFDCBA /* BaseResponse.swift */; };
+		11E56A3123427CE700BFDCBA /* BadgeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E56A3023427CE600BFDCBA /* BadgeResponse.swift */; };
+		11E56A332342817C00BFDCBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E56A322342817C00BFDCBA /* GoogleService-Info.plist */; };
 		97694504D05D8D053199A3CE /* Pods_HB_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,9 @@
 		11763313233FE1F1000EA82D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		11763315233FE6A5000EA82D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		11763318233FFA9E000EA82D /* ProcessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingViewController.swift; sourceTree = "<group>"; };
+		11E56A2E234270D600BFDCBA /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		11E56A3023427CE600BFDCBA /* BadgeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeResponse.swift; path = "/Users/hungcao/Desktop/HB-Partner/HB-Partner/Entity/BadgeResponse.swift"; sourceTree = "<absolute>"; };
+		11E56A322342817C00BFDCBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9709E33EA15380B5359CDE00 /* Pods-HB-Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		B1887A720DF8A17A4B0F13CB /* Pods-HB-Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.release.xcconfig"; sourceTree = "<group>"; };
 		F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB_Partner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +124,7 @@
 				1144C23E2333EE8E0073CEF8 /* Colors.xcassets */,
 				1144C22F2333E5D60073CEF8 /* Info.plist */,
 				1144C2482333F1D70073CEF8 /* R.generated.swift */,
+				11E56A322342817C00BFDCBA /* GoogleService-Info.plist */,
 			);
 			path = "HB-Partner";
 			sourceTree = "<group>";
@@ -198,8 +205,10 @@
 		1176330F233FE00B000EA82D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				11E56A3023427CE600BFDCBA /* BadgeResponse.swift */,
 				11763310233FE03E000EA82D /* PhoneValidationResponse.swift */,
 				110430CE2340FD820019EB9D /* Profile.swift */,
+				11E56A2E234270D600BFDCBA /* BaseResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -304,6 +313,7 @@
 				1144C22B2333E5D60073CEF8 /* Assets.xcassets in Resources */,
 				1144C2412333EF850073CEF8 /* Login.storyboard in Resources */,
 				1144C2292333E5D50073CEF8 /* Main.storyboard in Resources */,
+				11E56A332342817C00BFDCBA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,9 +372,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -373,9 +386,12 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,10 +435,12 @@
 				113F457723406C8300DF2E09 /* ClosedViewController.swift in Sources */,
 				1144C2442333EF9F0073CEF8 /* LoginViewController.swift in Sources */,
 				113F457B23406DF000DF2E09 /* SettingViewController.swift in Sources */,
+				11E56A2F234270D600BFDCBA /* BaseResponse.swift in Sources */,
 				1144C2492333F1D70073CEF8 /* R.generated.swift in Sources */,
 				1176330D233FDF8D000EA82D /* Requests.swift in Sources */,
 				11763311233FE03E000EA82D /* PhoneValidationResponse.swift in Sources */,
 				11763314233FE1F1000EA82D /* Config.swift in Sources */,
+				11E56A3123427CE700BFDCBA /* BadgeResponse.swift in Sources */,
 				1144C2242333E5D50073CEF8 /* AppDelegate.swift in Sources */,
 				11763319233FFA9E000EA82D /* ProcessingViewController.swift in Sources */,
 				11763316233FE6A5000EA82D /* UIViewControllerExtension.swift in Sources */,

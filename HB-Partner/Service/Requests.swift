@@ -10,6 +10,8 @@ import UIKit
 import AlamofireObjectMapper
 import Alamofire
 import ObjectMapper
+import Reachability
+import CoreLocation
 
 class Request {
     
@@ -37,15 +39,58 @@ class Request {
            Alamofire.request(Config.GET_PROFILE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<ProfileResponse>) in
                switch response.result {
                case .success(let data):
-                guard let profile = data.data?.first else {
-                    onError?(data.message ?? "")
-                    return
-                }
-                onSuccess?(profile, data.message ?? "")
+                    guard let profile = data.data?.first else {
+                        onError?(data.message ?? "")
+                        return
+                    }
+                    onSuccess?(profile, data.message ?? "")
                case .failure(let error):
-                   onError?(error.localizedDescription)
-                   break
+                    onError?(error.localizedDescription)
+                    break
                }
            }
        }
+    
+    public static func sendGPSIP(phone: String, latitude: Double, longitude: Double, ipAddress: String, networkType: String, onSuccess: ((_ response: BaseResponse, _ message: String) -> ())?, onError: ((_ errorMessage: String) -> ())? = nil) {
+        let params = ["partner_phone": phone,
+                      "latitude": latitude,
+                      "longtitude": longitude,
+                      "ip_address": ipAddress,
+                      "network_type": networkType] as [String : Any]
+        Alamofire.request(Config.GET_PROFILE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BaseResponse>) in
+            switch response.result {
+            case .success(let data):
+                onSuccess?(data, data.message ?? "")
+            case .failure(let error):
+                onError?(error.localizedDescription)
+                break
+            }
+        }
+    }
+    
+    public static func getBadges(phone: String, onSuccess: ((_ response: BadgeResponse, _ message: String) -> ())?, onError: ((_ errorMessage: String) -> ())? = nil) {
+        let params = ["partner_phone": phone]
+        Alamofire.request(Config.GET_BADGE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BadgeResponse>) in
+            switch response.result {
+            case .success(let data):
+                onSuccess?(data, data.message ?? "")
+            case .failure(let error):
+                onError?(error.localizedDescription)
+                break
+            }
+        }
+    }
+    
+    public static func logout(phone: String, onSuccess: ((_ response: BaseResponse, _ message: String) -> ())?, onError: ((_ errorMessage: String) -> ())? = nil) {
+        let params = ["partner_phone": phone]
+        Alamofire.request(Config.GET_BADGE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BaseResponse>) in
+            switch response.result {
+            case .success(let data):
+                onSuccess?(data, data.message ?? "")
+            case .failure(let error):
+                onError?(error.localizedDescription)
+                break
+            }
+        }
+    }
 }

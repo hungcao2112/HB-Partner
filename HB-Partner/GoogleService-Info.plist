@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>468827520370-7e1cacm4oq22i128iubagmhenonlbtsl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.468827520370-7e1cacm4oq22i128iubagmhenonlbtsl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCPpOn3E2nta6zKiE0FMpmA5rWotqrGWPA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>468827520370</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.hungcao.hbpartner</string>
+	<key>PROJECT_ID</key>
+	<string>hb-partner</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hb-partner.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:468827520370:ios:75b8e89a6b70c3e2bb31eb</string>
+	<key>DATABASE_URL</key>
+	<string>https://hb-partner.firebaseio.com</string>
+</dict>
+</plist>

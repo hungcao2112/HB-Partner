@@ -8,6 +8,7 @@
 
 import UIKit
 import AccountKit
+import NVActivityIndicatorView
 
 class SettingViewController: UIViewController {
 
@@ -23,9 +24,22 @@ class SettingViewController: UIViewController {
         requestAccount()
     }
     
+    private func showLoading() {
+        let activity = ActivityData(type: .ballGridPulse, color: R.color.primary_red())
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activity)
+    }
+    
+    private func hideLoading() {
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+    }
+    
     private func requestAccount() {
+        showLoading()
         accountKit.requestAccount { [weak self] (account, error) in
-            guard let phone = account?.phoneNumber?.phoneNumber else { return }
+            guard let phone = account?.phoneNumber?.phoneNumber else {
+                self?.hideLoading()
+                return
+            }
             self?.getProfile(phone: "0\(phone)")
         }
     }
@@ -36,8 +50,37 @@ class SettingViewController: UIViewController {
             self?.phoneLabel.text = profile.representativeContact
             self?.emailLabel.text = profile.companyId
             self?.addressLabel.text = profile.companyAddress
+            self?.hideLoading()
         }) { [weak self] (message) in
             self?.showToast(message)
+            self?.hideLoading()
+        }
+    }
+    
+    private func goToLogin() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        appDelegate.switchRootViewController(R.storyboard.login.loginViewController()!)
+    }
+    
+    @IBAction func onLogoutButtonTapped(_ sender: Any) {
+        self.showLoading()
+        accountKit.requestAccount { [weak self] (account, error) in
+            guard let phone = account?.phoneNumber?.phoneNumber else {
+                self?.hideLoading()
+                return
+            }
+            Request.logout(phone: "0\(phone)", onSuccess: { [weak self] (response, message) in
+                self?.accountKit.logOut { (loggedOut, error) in
+                    self?.hideLoading()
+                    if let _ = error { return }
+                    self?.goToLogin()
+                }
+            }) { [weak self] (message) in
+                self?.showToast(message)
+                self?.hideLoading()
+            }
         }
     }
 }
