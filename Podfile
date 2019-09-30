@@ -11,5 +11,6 @@ target 'HB-Partner' do
   pod 'AlamofireObjectMapper'
   pod 'Toaster'
   pod 'NVActivityIndicatorView'
+  pod 'ReachabilitySwift'
   
 end

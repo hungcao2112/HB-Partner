@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import CoreLocation
+import Reachability
+import AccountKit
 
 class MainViewController: UITabBarController {
 
     var token: String = ""
     
+    private var locationManager = CLLocationManager()
+    private var reachability = Reachability()!
+    private var accountKit = AccountKit(responseType: .accessToken)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabbarViewController()
+        setupLocation()
     }
-    
 
     private func setupTabbarViewController() {
         for viewController in viewControllers ?? [] {
@@ -28,6 +35,72 @@ class MainViewController: UITabBarController {
             }
             else if let nvc = viewController as? UINavigationController, let vc = nvc.topViewController as? ClosedViewController {
                 vc.requestURL = Config.MENU_CLOSED_WEBVIEW_URL
+            }
+        }
+    }
+    
+    private func setupLocation() {
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func getIPAddress() -> String {
+        var address: String?
+        var ifaddr: UnsafeMutablePointer<ifaddrs>? = nil
+        if getifaddrs(&ifaddr) == 0 {
+            var ptr = ifaddr
+            while ptr != nil {
+                defer { ptr = ptr?.pointee.ifa_next }
+
+                let interface = ptr?.pointee
+                let addrFamily = interface?.ifa_addr.pointee.sa_family
+                if addrFamily == UInt8(AF_INET) || addrFamily == UInt8(AF_INET6) {
+
+                    // wifi = ["en0"]
+                    // wired = ["en2", "en3", "en4"]
+                    // cellular = ["pdp_ip0","pdp_ip1","pdp_ip2","pdp_ip3"]
+
+                    let name: String = String(cString: (interface!.ifa_name))
+                    if  name == "en0" || name == "en2" || name == "en3" || name == "en4" || name == "pdp_ip0" || name == "pdp_ip1" || name == "pdp_ip2" || name == "pdp_ip3" {
+                        var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+                        getnameinfo(interface?.ifa_addr, socklen_t((interface?.ifa_addr.pointee.sa_len)!), &hostname, socklen_t(hostname.count), nil, socklen_t(0), NI_NUMERICHOST)
+                        address = String(cString: hostname)
+                    }
+                }
+            }
+            freeifaddrs(ifaddr)
+        }
+        return address ?? ""
+    }
+}
+
+extension MainViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let lat = locations.last!.coordinate.latitude
+        let long = locations.last!.coordinate.longitude
+        let ipAddress = getIPAddress()
+        accountKit.requestAccount { [weak self] (account, error) in
+            guard let `self` = self else { return }
+            guard let phone = account?.phoneNumber?.phoneNumber else { return }
+            self.reachability.whenReachable = { reachability in
+                var networkType: String = ""
+                switch reachability.connection {
+                case .none:
+                    return
+                case .wifi:
+                    networkType = "WIFI"
+                case .cellular:
+                    networkType = "4G"
+                }
+                Request.sendGPSIP(phone: "0\(phone)", latitude: lat, longitude: long, ipAddress: ipAddress, networkType: networkType, onSuccess: { [weak self] (response, message) in
+                    self?.showToast(message)
+                }) { [weak self] (message) in
+                    self?.showToast(message)
+                }
             }
         }
     }

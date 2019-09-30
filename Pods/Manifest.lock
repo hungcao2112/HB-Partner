@@ -11,6 +11,7 @@ PODS:
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
+  - ReachabilitySwift (4.3.1)
   - Toaster (2.2.0)
 
 DEPENDENCIES:
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper
   - NVActivityIndicatorView
   - R.swift
+  - ReachabilitySwift
   - Toaster
 
 SPEC REPOS:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - ObjectMapper
     - R.swift
     - R.swift.Library
+    - ReachabilitySwift
     - Toaster
 
 SPEC CHECKSUMS:
@@ -39,8 +42,9 @@ SPEC CHECKSUMS:
   ObjectMapper: 078b564ed25c6578b62588e306bf1da3924636d4
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
 
-PODFILE CHECKSUM: 94dca4463236c2cd9600a4d4cb68a887f88362d5
+PODFILE CHECKSUM: ba1b0805666936f2a1c27a2b0e12cd7656f0575b
 
 COCOAPODS: 1.5.3

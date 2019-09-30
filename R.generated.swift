@@ -31,10 +31,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 5 images.
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
     /// Image `ic_back`.
     static let ic_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_back")
+    /// Image `ic_flag`.
+    static let ic_flag = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_flag")
     /// Image `ic_tabbar_closed`.
     static let ic_tabbar_closed = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_tabbar_closed")
     /// Image `ic_tabbar_new`.
@@ -47,6 +49,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "ic_back", bundle: ..., traitCollection: ...)`
     static func ic_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.ic_back, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ic_flag", bundle: ..., traitCollection: ...)`
+    static func ic_flag(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_flag, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "ic_tabbar_closed", bundle: ..., traitCollection: ...)`
@@ -187,6 +194,7 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "ic_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_back' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ic_flag", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_flag' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tabbar_closed", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tabbar_closed' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tabbar_new", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tabbar_new' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ic_tabbar_processing", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_tabbar_processing' is used in storyboard 'Main', but couldn't be loaded.") }
