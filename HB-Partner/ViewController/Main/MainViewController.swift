@@ -23,6 +23,7 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
         setupTabbarViewController()
         setupLocation()
+        getBadges()
     }
 
     private func setupTabbarViewController() {
@@ -48,7 +49,7 @@ class MainViewController: UITabBarController {
         }
     }
     
-    func getIPAddress() -> String {
+    private func getIPAddress() -> String {
         var address: String?
         var ifaddr: UnsafeMutablePointer<ifaddrs>? = nil
         if getifaddrs(&ifaddr) == 0 {
@@ -75,6 +76,17 @@ class MainViewController: UITabBarController {
             freeifaddrs(ifaddr)
         }
         return address ?? ""
+    }
+    
+    private func getBadges() {
+        accountKit.requestAccount { [weak self] (account, error) in
+            guard let phone = account?.phoneNumber?.phoneNumber else { return }
+            Request.getBadges(phone: "0\(phone)", onSuccess: { [weak self] (response, message) in
+                guard let `self` = self else { return }
+                guard let badge = response.badge, badge != 0 else { return }
+                self.tabBar.items?[2].badgeValue = "\(badge)"
+            }, onError: nil)
+        }
     }
 }
 

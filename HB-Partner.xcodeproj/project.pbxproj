@@ -28,6 +28,7 @@
 		11763316233FE6A5000EA82D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11763315233FE6A5000EA82D /* UIViewControllerExtension.swift */; };
 		11763319233FFA9E000EA82D /* ProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11763318233FFA9E000EA82D /* ProcessingViewController.swift */; };
 		11E56A2F234270D600BFDCBA /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E56A2E234270D600BFDCBA /* BaseResponse.swift */; };
+		11E56A3123427CE700BFDCBA /* BadgeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E56A3023427CE600BFDCBA /* BadgeResponse.swift */; };
 		97694504D05D8D053199A3CE /* Pods_HB_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		11763315233FE6A5000EA82D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		11763318233FFA9E000EA82D /* ProcessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingViewController.swift; sourceTree = "<group>"; };
 		11E56A2E234270D600BFDCBA /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		11E56A3023427CE600BFDCBA /* BadgeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeResponse.swift; path = "/Users/hungcao/Desktop/HB-Partner/HB-Partner/Entity/BadgeResponse.swift"; sourceTree = "<absolute>"; };
 		9709E33EA15380B5359CDE00 /* Pods-HB-Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		B1887A720DF8A17A4B0F13CB /* Pods-HB-Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.release.xcconfig"; sourceTree = "<group>"; };
 		F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB_Partner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +202,7 @@
 		1176330F233FE00B000EA82D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				11E56A3023427CE600BFDCBA /* BadgeResponse.swift */,
 				11763310233FE03E000EA82D /* PhoneValidationResponse.swift */,
 				110430CE2340FD820019EB9D /* Profile.swift */,
 				11E56A2E234270D600BFDCBA /* BaseResponse.swift */,
@@ -429,6 +432,7 @@
 				1176330D233FDF8D000EA82D /* Requests.swift in Sources */,
 				11763311233FE03E000EA82D /* PhoneValidationResponse.swift in Sources */,
 				11763314233FE1F1000EA82D /* Config.swift in Sources */,
+				11E56A3123427CE700BFDCBA /* BadgeResponse.swift in Sources */,
 				1144C2242333E5D50073CEF8 /* AppDelegate.swift in Sources */,
 				11763319233FFA9E000EA82D /* ProcessingViewController.swift in Sources */,
 				11763316233FE6A5000EA82D /* UIViewControllerExtension.swift in Sources */,
