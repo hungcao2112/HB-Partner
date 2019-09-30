@@ -12,5 +12,6 @@ target 'HB-Partner' do
   pod 'Toaster'
   pod 'NVActivityIndicatorView'
   pod 'ReachabilitySwift'
+  pod 'Firebase/Messaging'
   
 end

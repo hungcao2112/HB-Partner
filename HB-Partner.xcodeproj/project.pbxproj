@@ -29,6 +29,7 @@
 		11763319233FFA9E000EA82D /* ProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11763318233FFA9E000EA82D /* ProcessingViewController.swift */; };
 		11E56A2F234270D600BFDCBA /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E56A2E234270D600BFDCBA /* BaseResponse.swift */; };
 		11E56A3123427CE700BFDCBA /* BadgeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E56A3023427CE600BFDCBA /* BadgeResponse.swift */; };
+		11E56A332342817C00BFDCBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E56A322342817C00BFDCBA /* GoogleService-Info.plist */; };
 		97694504D05D8D053199A3CE /* Pods_HB_Partner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		11763318233FFA9E000EA82D /* ProcessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingViewController.swift; sourceTree = "<group>"; };
 		11E56A2E234270D600BFDCBA /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		11E56A3023427CE600BFDCBA /* BadgeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BadgeResponse.swift; path = "/Users/hungcao/Desktop/HB-Partner/HB-Partner/Entity/BadgeResponse.swift"; sourceTree = "<absolute>"; };
+		11E56A322342817C00BFDCBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9709E33EA15380B5359CDE00 /* Pods-HB-Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.debug.xcconfig"; sourceTree = "<group>"; };
 		B1887A720DF8A17A4B0F13CB /* Pods-HB-Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HB-Partner.release.xcconfig"; path = "Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner.release.xcconfig"; sourceTree = "<group>"; };
 		F8C7F0DAF5FA3711A6529E36 /* Pods_HB_Partner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HB_Partner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				1144C23E2333EE8E0073CEF8 /* Colors.xcassets */,
 				1144C22F2333E5D60073CEF8 /* Info.plist */,
 				1144C2482333F1D70073CEF8 /* R.generated.swift */,
+				11E56A322342817C00BFDCBA /* GoogleService-Info.plist */,
 			);
 			path = "HB-Partner";
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				1144C22B2333E5D60073CEF8 /* Assets.xcassets in Resources */,
 				1144C2412333EF850073CEF8 /* Login.storyboard in Resources */,
 				1144C2292333E5D50073CEF8 /* Main.storyboard in Resources */,
+				11E56A332342817C00BFDCBA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +333,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -368,8 +372,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-HB-Partner/Pods-HB-Partner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
@@ -380,8 +386,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
