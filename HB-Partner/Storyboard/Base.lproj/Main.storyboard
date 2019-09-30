@@ -338,6 +338,9 @@
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onLogoutButtonTapped:" destination="t5p-jc-pIP" eventType="touchUpInside" id="iFB-yc-vOt"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <userDefinedRuntimeAttributes>

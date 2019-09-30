@@ -80,4 +80,17 @@ class Request {
             }
         }
     }
+    
+    public static func logout(phone: String, onSuccess: ((_ response: BaseResponse, _ message: String) -> ())?, onError: ((_ errorMessage: String) -> ())? = nil) {
+        let params = ["partner_phone": phone]
+        Alamofire.request(Config.GET_BADGE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BaseResponse>) in
+            switch response.result {
+            case .success(let data):
+                onSuccess?(data, data.message ?? "")
+            case .failure(let error):
+                onError?(error.localizedDescription)
+                break
+            }
+        }
+    }
 }
