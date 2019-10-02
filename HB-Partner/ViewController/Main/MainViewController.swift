@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Reachability
 import AccountKit
+import Firebase
 
 class MainViewController: UITabBarController {
 
@@ -24,6 +25,7 @@ class MainViewController: UITabBarController {
         setupTabbarViewController()
         setupLocation()
         getBadges()
+        registerDevice()
     }
 
     private func setupTabbarViewController() {
@@ -87,6 +89,28 @@ class MainViewController: UITabBarController {
                 self.tabBar.items?[2].badgeValue = "\(badge)"
             }, onError: nil)
         }
+    }
+    
+    private func registerDevice() {
+        InstanceID.instanceID().instanceID { [weak self] (result, error) in
+            guard let `self` = self else { return }
+            guard let result = result else {
+                return
+            }
+            let fcmToken = result.token
+            let deviceToken = Messaging.messaging().apnsToken?.hexString ?? ""
+            
+            print("fcmTokennnn: \(fcmToken)")
+            print("deviceTokennn: \(deviceToken)")
+            self.accountKit.requestAccount { [weak self] (account, error) in
+                Request.registerDevice(phone: "0\(account?.phoneNumber?.phoneNumber ?? "")", token: fcmToken, deviceId: deviceToken, onSuccess: { (response, message) in
+                    self?.showToast(message)
+                }) { (message) in
+                    self?.showToast(message)
+                }
+            }
+        }
+        
     }
 }
 
