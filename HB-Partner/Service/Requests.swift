@@ -93,4 +93,20 @@ class Request {
             }
         }
     }
+    
+    public static func registerDevice(phone: String, token: String, deviceId: String, deviceType: Int = 2, onSuccess: ((_ response: BaseResponse, _ message: String) -> ())?, onError: ((_ errorMessage: String) -> ())? = nil) {
+        let params = ["partner_phone": phone,
+                      "token": token,
+                      "device_id": deviceId,
+                      "device_type": deviceType] as [String : Any]
+        Alamofire.request(Config.GET_BADGE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BaseResponse>) in
+            switch response.result {
+            case .success(let data):
+                onSuccess?(data, data.message ?? "")
+            case .failure(let error):
+                onError?(error.localizedDescription)
+                break
+            }
+        }
+    }
 }

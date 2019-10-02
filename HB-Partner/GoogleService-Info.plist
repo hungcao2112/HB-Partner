@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>468827520370-7e1cacm4oq22i128iubagmhenonlbtsl.apps.googleusercontent.com</string>
+	<string>574416250829-mlah248fookbgh2ph28cebo5qjd31aai.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.468827520370-7e1cacm4oq22i128iubagmhenonlbtsl</string>
+	<string>com.googleusercontent.apps.574416250829-mlah248fookbgh2ph28cebo5qjd31aai</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>574416250829-jc5u4ogs6dugsb7n9n4iothankgd0fva.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCPpOn3E2nta6zKiE0FMpmA5rWotqrGWPA</string>
+	<string>AIzaSyBPamg0kQMrbUI1YTWVPQu48-BMA2CuvbI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>468827520370</string>
+	<string>574416250829</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.hungcao.hbpartner</string>
+	<string>com.hobien.hbpartner</string>
 	<key>PROJECT_ID</key>
-	<string>hb-partner</string>
+	<string>hobienpartner</string>
 	<key>STORAGE_BUCKET</key>
-	<string>hb-partner.appspot.com</string>
+	<string>hobienpartner.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:468827520370:ios:75b8e89a6b70c3e2bb31eb</string>
+	<string>1:574416250829:ios:9b0f8be4752a8ec4310684</string>
 	<key>DATABASE_URL</key>
-	<string>https://hb-partner.firebaseio.com</string>
+	<string>https://hobienpartner.firebaseio.com</string>
 </dict>
 </plist>
