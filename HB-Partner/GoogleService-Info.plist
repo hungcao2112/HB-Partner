@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>574416250829-mlah248fookbgh2ph28cebo5qjd31aai.apps.googleusercontent.com</string>
+	<string>574416250829-mvs95f5apg3u2cauhk74tct1h0stk950.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.574416250829-mlah248fookbgh2ph28cebo5qjd31aai</string>
+	<string>com.googleusercontent.apps.574416250829-mvs95f5apg3u2cauhk74tct1h0stk950</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>574416250829-jc5u4ogs6dugsb7n9n4iothankgd0fva.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.hobien.hbpartner</string>
+	<string>com.hobien.partner</string>
 	<key>PROJECT_ID</key>
 	<string>hobienpartner</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:574416250829:ios:9b0f8be4752a8ec4310684</string>
+	<string>1:574416250829:ios:0e7ed6306473b532310684</string>
 	<key>DATABASE_URL</key>
 	<string>https://hobienpartner.firebaseio.com</string>
 </dict>
