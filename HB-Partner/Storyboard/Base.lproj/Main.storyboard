@@ -38,14 +38,7 @@
                     <tabBarItem key="tabBarItem" title="Processing" image="ic_tabbar_processing" id="2xq-C5-fXi">
                         <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Processing" id="DNM-gU-r4y">
-                        <barButtonItem key="leftBarButtonItem" image="ic_back" id="BeF-xx-WEN">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="onBackButtonTappedWithSender:" destination="4WZ-in-ZrY" id="H4x-v8-iIX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Processing" id="DNM-gU-r4y"/>
                     <connections>
                         <outlet property="webView" destination="1Ay-aE-HXb" id="H5B-YX-HIi"/>
                     </connections>
@@ -106,14 +99,7 @@
                     <tabBarItem key="tabBarItem" title="Closed" image="ic_tabbar_closed" id="eUK-lX-PVe">
                         <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Closed" id="S7g-Mq-d5N">
-                        <barButtonItem key="leftBarButtonItem" image="ic_back" id="MLu-7b-SUH">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="onBackButtonTappedWithSender:" destination="I24-oo-qwS" id="lyK-rI-m2M"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Closed" id="S7g-Mq-d5N"/>
                     <connections>
                         <outlet property="webView" destination="UCQ-4h-4Fv" id="QJB-Lf-C6q"/>
                     </connections>
@@ -444,14 +430,7 @@
                     <tabBarItem key="tabBarItem" title="New" image="ic_tabbar_new" id="jnV-kC-L2Q">
                         <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="New" id="fYa-H3-aaS">
-                        <barButtonItem key="leftBarButtonItem" image="ic_back" id="Iy9-mK-T0n">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="onBackButtonTappedWithSender:" destination="oCU-bb-i0y" id="Eze-vf-Cin"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="New" id="fYa-H3-aaS"/>
                     <connections>
                         <outlet property="webView" destination="oXa-KF-rf1" id="dKN-t3-mTj"/>
                     </connections>
@@ -514,7 +493,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_back" width="21.333333969116211" height="21.333333969116211"/>
         <image name="ic_flag" width="21.333333969116211" height="21.333333969116211"/>
         <image name="ic_tabbar_closed" width="21.333333969116211" height="21.333333969116211"/>
         <image name="ic_tabbar_new" width="21.333333969116211" height="21.333333969116211"/>

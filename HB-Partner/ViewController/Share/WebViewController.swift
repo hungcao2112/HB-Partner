@@ -20,10 +20,15 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         showLoading()
-        setupWebView()
+        if webView.url == nil {
+            setupWebView()
+        }
+        else {
+            webView.reloadFromOrigin()
+        }
     }
     
     private func showLoading() {
@@ -33,6 +38,16 @@ class WebViewController: UIViewController {
     
     private func hideLoading() {
         NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+    }
+    
+    private func addBackButton() {
+        let backButton = UIBarButtonItem(image: R.image.ic_back()!, style: .plain, target: self, action: #selector(onBackButtonTapped))
+        backButton.tintColor = .white
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+    
+    private func removeBackButton() {
+        self.navigationItem.leftBarButtonItem = nil
     }
     
     private func setupWebView() {
@@ -47,21 +62,34 @@ class WebViewController: UIViewController {
         }
     }
 
-    @IBAction func onBackButtonTapped(sender: Any) {
+    @objc private func onBackButtonTapped() {
         webView.goBack()
     }
 }
 
-extension WebViewController: WKUIDelegate, WKNavigationDelegate {
+extension WebViewController: WKUIDelegate, WKNavigationDelegate{
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        hideLoading()
+        self.hideLoading()
+        if webView.canGoBack {
+            addBackButton()
+        }
+        else {
+            removeBackButton()
+        }
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if navigationAction.navigationType == .linkActivated {
-            guard let url = navigationAction.request.url else {return}
-            webView.load(URLRequest(url: url))
+        guard let url = navigationAction.request.url else { return }
+        if url.scheme == "tel" {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            decisionHandler(.cancel)
+            return
+        }
+        else if url.scheme == "sms" {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            decisionHandler(.cancel)
+            return
         }
         decisionHandler(.allow)
     }
