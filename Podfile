@@ -13,5 +13,6 @@ target 'HB-Partner' do
   pod 'NVActivityIndicatorView'
   pod 'ReachabilitySwift'
   pod 'Firebase/Messaging'
+  pod 'SwiftEventBus', :tag => '5.0.0', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
   
 end

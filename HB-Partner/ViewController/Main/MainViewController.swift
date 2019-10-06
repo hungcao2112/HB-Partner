@@ -11,6 +11,7 @@ import CoreLocation
 import Reachability
 import AccountKit
 import Firebase
+import SwiftEventBus
 
 class MainViewController: UITabBarController {
 
@@ -26,6 +27,7 @@ class MainViewController: UITabBarController {
         setupLocation()
         getBadges()
         registerDevice()
+        handleNotifications()
     }
 
     private func setupTabbarViewController() {
@@ -110,7 +112,25 @@ class MainViewController: UITabBarController {
                 }
             }
         }
-        
+    }
+    
+    private func handleNotifications() {
+        SwiftEventBus.onMainThread(self, name: "RECEIVE_NOTIFICATION_EVENT") { (result) in
+            guard let notification = result?.object as? RemoteNotification else { return }
+            self.getBadges()
+            if notification.type == "new" {
+                self.selectedIndex = 0
+            }
+            else if notification.type == "note" {
+                if let vc = self.viewControllers?[1] as? ProcessingViewController {
+                    if let bugId = notification.bugId {
+                        let urlString = "http://admin2.hobien.kjclub.org/m_view.php?id=\(bugId)#bugnoteadd"
+                        vc.requestURL = urlString
+                    }
+                }
+                self.selectedIndex = 1
+            }
+        }
     }
 }
 

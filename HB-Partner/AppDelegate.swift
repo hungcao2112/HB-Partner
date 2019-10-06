@@ -8,12 +8,12 @@
 
 import UIKit
 import Firebase
+import SwiftEventBus
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -60,11 +60,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
-        print("deviceeeee: \(deviceToken.hexString)")
     }
     
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("deviceeeeErrorrrr: \(error.localizedDescription)")
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if let userInfo = userInfo as? [String: Any] {
+            SwiftEventBus.post("RECEIVE_NOTIFICATION_EVENT", sender: RemoteNotification(JSON: userInfo))
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

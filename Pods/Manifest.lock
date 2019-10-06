@@ -51,6 +51,7 @@ PODS:
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
   - ReachabilitySwift (4.3.1)
+  - SwiftEventBus (5.0.0)
   - Toaster (2.2.0)
 
 DEPENDENCIES:
@@ -60,6 +61,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - R.swift
   - ReachabilitySwift
+  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `5.0.0`)
   - Toaster
 
 SPEC REPOS:
@@ -81,6 +83,16 @@ SPEC REPOS:
     - ReachabilitySwift
     - Toaster
 
+EXTERNAL SOURCES:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+    :tag: 5.0.0
+
+CHECKOUT OPTIONS:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+    :tag: 5.0.0
+
 SPEC CHECKSUMS:
   AccountKit: d05258857e74b04386c263a1365b27dbb5ff62b9
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -97,8 +109,9 @@ SPEC CHECKSUMS:
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  SwiftEventBus: b30f617a6aca5a9336464b4d3f5931034762f2d5
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
 
-PODFILE CHECKSUM: baea99cd59b4291bf1903ccb24aad777c5b7401e
+PODFILE CHECKSUM: f9c00bb4398dcf470f9e55d23c80f6c244cc5f9e
 
 COCOAPODS: 1.5.3
