@@ -121,7 +121,7 @@ extension WebViewController: WKUIDelegate, WKNavigationDelegate{
         }
         
         if url.absoluteString.contains("login_page.php") {
-//            self.logout()
+            self.logout()
             decisionHandler(.allow)
             return
         }
