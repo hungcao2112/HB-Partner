@@ -138,8 +138,10 @@ class MainViewController: UITabBarController {
 
 extension MainViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let lat = locations.last!.coordinate.latitude
-        let long = locations.last!.coordinate.longitude
+        manager.stopUpdatingLocation()
+        guard let lat = locations.first?.coordinate.latitude,
+            let long = locations.first?.coordinate.latitude else { return }
+        print("lat: \(lat), long: \(long)")
         let ipAddress = getIPAddress()
         accountKit.requestAccount { [weak self] (account, error) in
             guard let `self` = self else { return }
@@ -148,7 +150,7 @@ extension MainViewController: CLLocationManagerDelegate {
                 var networkType: String = ""
                 switch reachability.connection {
                 case .none:
-                    return
+                    break
                 case .wifi:
                     networkType = "WIFI"
                 case .cellular:
