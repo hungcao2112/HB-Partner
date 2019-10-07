@@ -87,8 +87,12 @@ class MainViewController: UITabBarController {
             guard let phone = account?.phoneNumber?.phoneNumber else { return }
             Request.getBadges(phone: "0\(phone)", onSuccess: { [weak self] (response, message) in
                 guard let `self` = self else { return }
-                guard let badge = response.badge, badge != 0 else { return }
-                self.tabBar.items?[2].badgeValue = "\(badge)"
+                if let badge = response.badge, badge != 0 {
+                    self.tabBar.items?[0].badgeValue = "\(badge)"
+                }
+                if let badgeNote = response.badgeNote, badgeNote != 0 {
+                    self.tabBar.items?[1].badgeValue = "\(badgeNote)"
+                }
             }, onError: nil)
         }
     }
