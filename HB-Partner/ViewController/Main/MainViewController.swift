@@ -102,8 +102,6 @@ class MainViewController: UITabBarController {
             let fcmToken = result.token
             let deviceToken = Messaging.messaging().apnsToken?.hexString ?? ""
             
-            print("fcmTokennnn: \(fcmToken)")
-            print("deviceTokennn: \(deviceToken)")
             self.accountKit.requestAccount { [weak self] (account, error) in
                 Request.registerDevice(phone: "0\(account?.phoneNumber?.phoneNumber ?? "")", token: fcmToken, deviceId: deviceToken, onSuccess: { (response, message) in
                     self?.showToast(message)

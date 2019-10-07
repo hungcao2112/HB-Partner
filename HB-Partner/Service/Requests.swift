@@ -57,7 +57,7 @@ class Request {
                       "longtitude": longitude,
                       "ip_address": ipAddress,
                       "network_type": networkType] as [String : Any]
-        Alamofire.request(Config.GET_PROFILE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BaseResponse>) in
+        Alamofire.request(Config.SEND_GPS_IP_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BaseResponse>) in
             switch response.result {
             case .success(let data):
                 onSuccess?(data, data.message ?? "")
@@ -83,7 +83,7 @@ class Request {
     
     public static func logout(phone: String, onSuccess: ((_ response: BaseResponse, _ message: String) -> ())?, onError: ((_ errorMessage: String) -> ())? = nil) {
         let params = ["partner_phone": phone]
-        Alamofire.request(Config.GET_BADGE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BaseResponse>) in
+        Alamofire.request(Config.LOGOUT_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BaseResponse>) in
             switch response.result {
             case .success(let data):
                 onSuccess?(data, data.message ?? "")
@@ -99,7 +99,7 @@ class Request {
                       "token": token,
                       "device_id": deviceId,
                       "device_type": deviceType] as [String : Any]
-        Alamofire.request(Config.GET_BADGE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BaseResponse>) in
+        Alamofire.request(Config.REGISTER_DEVICE_URL, method: .post, parameters: params).responseObject { (response: DataResponse<BaseResponse>) in
             switch response.result {
             case .success(let data):
                 onSuccess?(data, data.message ?? "")

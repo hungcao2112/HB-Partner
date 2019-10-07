@@ -14,6 +14,8 @@ class Config {
     public static let GET_PROFILE_URL = "http://hobien.kjclub.org/webhook/partner/v1/profile"
     public static let SEND_GPS_IP_URL = "http://hobien.kjclub.org/webhook/partner/v1/gpsip"
     public static let GET_BADGE_URL = "http://hobien.kjclub.org/webhook/partner/v1/getBadge"
+    public static let REGISTER_DEVICE_URL = "http://hobien.kjclub.org/webhook/partner/RegisterDevice.php"
+    public static let LOGOUT_URL = "http://hobien.kjclub.org/webhook/partner/v1/logout"
     
     public static let COOKIE_DOMAIN = "admin2.hobien.kjclub.org"
     
