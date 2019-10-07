@@ -95,7 +95,7 @@ class Request {
     }
     
     public static func registerDevice(phone: String, token: String, deviceId: String, deviceType: Int = 2, onSuccess: ((_ response: BaseResponse, _ message: String) -> ())?, onError: ((_ errorMessage: String) -> ())? = nil) {
-        let params = ["partner_phone": phone,
+        let params = ["phone": phone,
                       "token": token,
                       "device_id": deviceId,
                       "device_type": deviceType] as [String : Any]
