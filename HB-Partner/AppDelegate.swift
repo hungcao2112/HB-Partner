@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
           UNUserNotificationCenter.current().requestAuthorization(
             options: authOptions,
             completionHandler: {_, _ in })
+            UNUserNotificationCenter.current().delegate = self
         } else {
           let settings: UIUserNotificationSettings =
           UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
@@ -66,6 +67,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if let userInfo = userInfo as? [String: Any] {
             SwiftEventBus.post("RECEIVE_NOTIFICATION_EVENT", sender: RemoteNotification(JSON: userInfo))
         }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+      // this is called when application is Foreground and push arrives we show alert, sound, here.
+        completionHandler([.alert, .sound])
+
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void){
+        let pushDictionary = response.notification.request.content.userInfo
+        if let userInfo = pushDictionary as? [String: Any] {
+                   SwiftEventBus.post("RECEIVE_NOTIFICATION_EVENT", sender: RemoteNotification(JSON: userInfo))
+               }
+           // handle your push here
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

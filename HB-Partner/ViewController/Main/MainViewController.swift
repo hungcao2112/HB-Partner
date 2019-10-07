@@ -82,7 +82,7 @@ class MainViewController: UITabBarController {
         return address ?? ""
     }
     
-    private func getBadges() {
+    func getBadges() {
         accountKit.requestAccount { [weak self] (account, error) in
             guard let phone = account?.phoneNumber?.phoneNumber else { return }
             Request.getBadges(phone: "0\(phone)", onSuccess: { [weak self] (response, message) in

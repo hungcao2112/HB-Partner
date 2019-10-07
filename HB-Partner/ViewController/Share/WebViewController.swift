@@ -9,11 +9,13 @@
 import UIKit
 import WebKit
 import NVActivityIndicatorView
+import AccountKit
 
 class WebViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
     
+    var accountKit = AccountKit(responseType: .accessToken)
     var requestURL: String = ""
     
     override func viewDidLoad() {
@@ -61,6 +63,32 @@ class WebViewController: UIViewController {
             self?.webView.load(URLRequest(url: URL(string: self?.requestURL ?? "")!), with: [cookies])
         }
     }
+    
+    private func logout() {
+        accountKit.requestAccount { [weak self] (account, error) in
+            guard let phone = account?.phoneNumber?.phoneNumber else {
+                self?.hideLoading()
+                return
+            }
+            Request.logout(phone: "0\(phone)", onSuccess: { [weak self] (response, message) in
+                self?.accountKit.logOut { (loggedOut, error) in
+                    self?.hideLoading()
+                    if let _ = error { return }
+                    self?.goToLogin()
+                }
+            }) { [weak self] (message) in
+                self?.showToast(message)
+                self?.hideLoading()
+            }
+        }
+    }
+    
+    private func goToLogin() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        appDelegate.switchRootViewController(R.storyboard.login.loginViewController()!)
+    }
 
     @objc private func onBackButtonTapped() {
         webView.goBack()
@@ -89,6 +117,19 @@ extension WebViewController: WKUIDelegate, WKNavigationDelegate{
         else if url.scheme == "sms" {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
             decisionHandler(.cancel)
+            return
+        }
+        
+        if url.absoluteString.contains("login_page.php") {
+//            self.logout()
+            decisionHandler(.allow)
+            return
+        }
+        if url.absoluteString.contains("m_view.php") || url.absoluteString.contains("m_view_all_bug_ing_page.php") {
+            if let mainVC = self.tabBarController as? MainViewController {
+                mainVC.getBadges()
+            }
+            decisionHandler(.allow)
             return
         }
         decisionHandler(.allow)

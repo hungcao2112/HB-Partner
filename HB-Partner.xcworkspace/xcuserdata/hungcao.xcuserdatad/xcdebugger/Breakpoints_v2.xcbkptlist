@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "17AD717E-CE5E-431E-A95C-B2F14F29CB16"
+            uuid = "AC83B6A8-0955-4CCB-BD8B-AE4EC458DB32"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HB-Partner/Service/Requests.swift"
+            filePath = "HB-Partner/ViewController/Share/WebViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "logout(phone:onSuccess:onError:)"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "webView(_:decidePolicyFor:decisionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
