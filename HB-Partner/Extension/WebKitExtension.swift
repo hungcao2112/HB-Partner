@@ -17,6 +17,9 @@ extension WKWebView {
       for (name, value) in headers {
          request.addValue(value, forHTTPHeaderField: name)
       }
-      load(request)
+        DispatchQueue.main.async {
+            self.load(request)
+        }
+      
    }
 }

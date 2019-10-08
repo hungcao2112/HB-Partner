@@ -87,11 +87,23 @@ class MainViewController: UITabBarController {
             guard let phone = account?.phoneNumber?.phoneNumber else { return }
             Request.getBadges(phone: "0\(phone)", onSuccess: { [weak self] (response, message) in
                 guard let `self` = self else { return }
-                if let badge = response.badge, badge != 0 {
-                    self.tabBar.items?[0].badgeValue = "\(badge)"
+                print("\(response)")
+                if let badge = response.badge {
+                    if badge == 0 {
+                        self.tabBar.items?[0].badgeValue = nil
+                    }
+                    else {
+                        self.tabBar.items?[0].badgeValue = "\(badge)"
+                    }
+                    
                 }
-                if let badgeNote = response.badgeNote, badgeNote != 0 {
-                    self.tabBar.items?[1].badgeValue = "\(badgeNote)"
+                if let badgeNote = response.badgeNote {
+                    if badgeNote == 0 {
+                        self.tabBar.items?[1].badgeValue = nil
+                    }
+                    else {
+                        self.tabBar.items?[1].badgeValue = "\(badgeNote)"
+                    }
                 }
             }, onError: nil)
         }
@@ -161,6 +173,11 @@ extension MainViewController: CLLocationManagerDelegate {
                 }) { [weak self] (message) in
                     self?.showToast(message)
                 }
+            }
+            do {
+                try self.reachability.startNotifier()
+            } catch {
+                print("Unable to start notifier")
             }
         }
     }

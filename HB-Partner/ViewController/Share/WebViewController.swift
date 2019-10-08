@@ -56,12 +56,11 @@ class WebViewController: UIViewController {
         webView.backgroundColor = .white
         
         guard let cookies = HTTPCookieStorage.shared.cookies?.last  else { return }
-        webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookies) { [weak self] in
-            self?.webView.uiDelegate = self
-            self?.webView.navigationDelegate = self
-            self?.webView.allowsBackForwardNavigationGestures = true
-            self?.webView.load(URLRequest(url: URL(string: self?.requestURL ?? "")!), with: [cookies])
-        }
+        webView.configuration.websiteDataStore.httpCookieStore.setCookie(cookies)
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
+        webView.allowsBackForwardNavigationGestures = true
+        webView.load(URLRequest(url: URL(string: requestURL)!), with: [cookies])
     }
     
     private func logout() {
