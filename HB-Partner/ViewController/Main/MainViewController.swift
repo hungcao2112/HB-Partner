@@ -129,6 +129,11 @@ class MainViewController: UITabBarController {
     }
     
     private func handleNotifications() {
+        SwiftEventBus.onMainThread(self, name: "PRESENT_NOTIFICATION_EVENT") { (_) in
+            self.getBadges()
+            print("-----: get badges")
+        }
+        
         SwiftEventBus.onMainThread(self, name: "RECEIVE_NOTIFICATION_EVENT") { (result) in
             guard let notification = result?.object as? RemoteNotification else { return }
             self.getBadges()

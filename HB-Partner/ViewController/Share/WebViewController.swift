@@ -90,7 +90,9 @@ class WebViewController: UIViewController {
     }
 
     @objc private func onBackButtonTapped() {
-        webView.goBack()
+        if let backItem = webView.backForwardList.backItem {
+            webView.go(to: backItem)
+        }
     }
 }
 
@@ -105,6 +107,7 @@ extension WebViewController: WKUIDelegate, WKNavigationDelegate{
             removeBackButton()
         }
     }
+    
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let url = navigationAction.request.url else { return }
@@ -124,7 +127,7 @@ extension WebViewController: WKUIDelegate, WKNavigationDelegate{
             decisionHandler(.allow)
             return
         }
-        if url.absoluteString.contains("m_view.php") || url.absoluteString.contains("m_view_all_bug_ing_page.php") {
+        if url.absoluteString.contains("m_view.php") || url.absoluteString.contains("m_view_all_bug_ing_page.php") || url.absoluteString.contains("m_view_all_bug_page.php") {
             if let mainVC = self.tabBarController as? MainViewController {
                 mainVC.getBadges()
             }

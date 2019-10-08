@@ -36,7 +36,7 @@
                         <viewLayoutGuide key="safeArea" id="UHR-sQ-eJ0"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Processing" image="ic_tabbar_processing" id="2xq-C5-fXi">
-                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Processing" id="DNM-gU-r4y"/>
                     <connections>
@@ -52,7 +52,7 @@
             <objects>
                 <navigationController id="J5X-Bs-8MZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="IcW-x5-l2t">
-                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="scf-IM-K92">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -97,7 +97,7 @@
                         <viewLayoutGuide key="safeArea" id="9zd-HH-bX9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Closed" image="ic_tabbar_closed" id="eUK-lX-PVe">
-                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Closed" id="S7g-Mq-d5N"/>
                     <connections>
@@ -113,7 +113,7 @@
             <objects>
                 <navigationController id="Akp-4i-Jmd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="als-fP-sqR">
-                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="kSr-Pn-Q5k">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -364,7 +364,7 @@
                         <viewLayoutGuide key="safeArea" id="qEY-uB-bQd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="ic_tabbar_settings" id="sey-ky-eMM">
-                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Settings" id="8TC-OD-sY3"/>
                     <connections>
@@ -383,7 +383,7 @@
             <objects>
                 <navigationController id="Tyo-y9-7BK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="GtJ-ch-yrD">
-                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Eep-Vh-fUe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -428,7 +428,7 @@
                         <viewLayoutGuide key="safeArea" id="lkA-5H-NHd"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="New" image="ic_tabbar_new" id="jnV-kC-L2Q">
-                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="New" id="fYa-H3-aaS"/>
                     <connections>
@@ -473,7 +473,7 @@
             <objects>
                 <navigationController id="cZm-NI-yC0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="QEb-A1-QrU">
-                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="badgeColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="TcO-qc-LWh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
