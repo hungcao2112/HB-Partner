@@ -91,7 +91,7 @@ class WebViewController: UIViewController {
 
     @objc private func onBackButtonTapped() {
         if let backItem = webView.backForwardList.backItem {
-            webView.go(to: backItem)
+            webView.load(URLRequest(url: backItem.url))
         }
     }
 }
@@ -100,11 +100,11 @@ extension WebViewController: WKUIDelegate, WKNavigationDelegate{
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.hideLoading()
-        if webView.canGoBack {
-            addBackButton()
+        if webView.url?.absoluteString == self.requestURL {
+            self.removeBackButton()
         }
         else {
-            removeBackButton()
+            self.addBackButton()
         }
     }
     
@@ -123,7 +123,7 @@ extension WebViewController: WKUIDelegate, WKNavigationDelegate{
         }
         
         if url.absoluteString.contains("login_page.php") {
-            self.logout()
+            //self.logout()
             decisionHandler(.allow)
             return
         }
